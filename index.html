@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Proxy Gate</title>
+   </head>
+   <style>
+      input[type=text], select {
+      width: 100%;
+      height: 100%;
+      padding: 6px 10px;
+      margin: 4px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+         }
+
+      button[type=button] {
+      width: 100%;
+      height: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 7px 10px;
+      margin: 4px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+         }
+
+      button[type=button]:hover {
+      background-color: #45a049;
+         }
+
+      div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 10px;
+         }
+      .checkbox-inline {
+      display: inline-block;
+      }
+      .setting-server {
+         display: none;
+      }
+      .checkauto {
+         margin-left: -2px;
+      }
+      .labelotomatis {
+         
+      }
+   </style>
+   
+   <body>
+      <div id="root">
+         <form name="field" id="field">
+            <input type="checkbox" class="checkauto" id = "setAuto" name="setAuto" onclick={genAuto()}>
+            <label for="server" class="labelotomatis">Pencarian Otomatis</label>
+            <br>  
+               <div class="setting-server" id="setting-server">
+                  <div class="checkbox-inline">
+                     <label>
+                        <input type="checkbox" id = "id" name="check" value="id" onclick={onlyOne(this)}>Indonesia
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "us" name="check" value="us" onclick={onlyOne(this)}>USA
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "fr" name="check" value="fr" onclick={onlyOne(this)}>France
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "ru" name="check" value="ru" onclick={onlyOne(this)}>Rusia
+                     </label>                  
+                  </div>
+                  <div class="checkbox-inline">
+                     <label>
+                        <input type="checkbox" id = "my" name="check" value="my" onclick={onlyOne(this)}>Malaysia
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "cn" name="check" value="cn" onclick={onlyOne(this)}>China
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "sg" name="check" value="sg" onclick={onlyOne(this)}>Singapore
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "in" name="check" value="in" onclick={onlyOne(this)}>India
+                     </label>                  
+                  </div>
+                  <div class="checkbox-inline">
+                     <label>
+                        <input type="checkbox" id = "ua" name="check" value="ua" onclick={onlyOne(this)}>Ukraina
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "br" name="check" value="br" onclick={onlyOne(this)}>Brazil
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "iq" name="check" value="iq" onclick={onlyOne(this)}>Iraq
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "jp" name="check" value="jp" onclick={onlyOne(this)}>Japan
+                     </label>                  
+                  </div>
+                  <div class="checkbox-inline">
+                     <label>
+                        <input type="checkbox" id = "ch" name="check" value="ch" onclick={onlyOne(this)}>Switzerland
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "nl" name="check" value="nl" onclick={onlyOne(this)}>Netherlands
+                     </label>
+                     <label>
+                        <input type="checkbox" id = "es" name="check" value="es" onclick={onlyOne(this)}>Spain
+                     </label>                
+                  </div>
+                  <hr>
+
+                  <label for="UpTimeToServer">UP Time Server :</label>
+                  <select id="UpTimeServer" onchange={changeUpTime()}>
+                     <option value="30">30%</option>
+                     <option value="50">50%</option>
+                     <option value="60">60%</option>
+                     <option value="70">70%</option>
+                  </select>
+                  
+                  <hr>
+                  
+                  <label for="PingToServer">Ping to Server :</label>
+                  <select id="PingServer" onchange={changePing()}>
+                     <option value="50">50</option>
+                     <option value="100">100</option>
+                     <option value="200">200</option>
+                     <option value="250">250</option>
+                     <option value="300">300</option>
+                     <option value="350">350</option>
+                     <option value="400">400</option>
+                     <option value="450">450</option>
+                  </select>
+               
+                  </div>
+                     <button type="button" id="generate" onclick={generates()}>Dapatkan IP Proxy</button>
+               </div>             
+                  
+            <label for="ip-field" id="ip">IP Proxy :</label>
+            <input type="text" id="ip-field" name="ip-field" placeholder="0.0.0.0"><br>
+            
+            <label for="port-field">Port :</label>
+            <input type="text" id="port-field" name="port-field" placeholder="0000"><br>
+            
+            <label for="protocol">Protocol :</label>
+            <input type="text" id="protocol" name="protocol-field" placeholder="direkomendasikan socks4 atau socks5"><br>
+            
+
+
+            
+            <label for="url-field">URL Tujuan :</label>
+            <input type="text" id="url-field" name="url-field" value="https://www.youtube.com/"><br>
+         </form>
+            <button type="button" id="start" onclick={start()}>Gasss... !!!</button>      
+      </div>
+      <script type="text/javascript" src="./index.js"></script>
+   </body>
+</html>

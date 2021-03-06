@@ -1,0 +1,29 @@
+{
+  "name": "ProxyGate",
+  "version": "1.2.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron --no-sandbox .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds-proxyGate",
+    "package-win": "electron-packager . proxyGate --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds-proxyGate_1.3 --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"CryptoApp\"",
+    "package-linux": "electron-packager . proxyGate --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds-proxyGate_1.3",
+    "create-installer-mac": "electron-installer-dmg ./release-builds-proxyGate/ProxyGate-darwin-x64/ProxyGate.app/Contents/MacOS ProxyGate --out=release-builds --overwrite --icon=assets/icons/mac/icon.icns"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^3.1.11",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "electron-installer-dmg": "^3.0.0",
+    "electron-packager": "^15.2.0",
+    "electron-winstaller": "^4.0.1",
+    "electron-wix-msi": "^3.0.6"
+  },
+  "description": ""
+}
